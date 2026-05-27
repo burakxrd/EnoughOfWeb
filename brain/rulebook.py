@@ -207,8 +207,8 @@ class Rulebook:
         # ── Rule 1: Repeated errors ────────────────────────────────────────
         error_counter: Dict[str, Dict[str, Any]] = {}
         for a in attempts:
-            err = a.get("error_message", "").strip()
-            vuln = a.get("vulnerability_type", "unknown")
+            err = a.get("error", "").strip()
+            vuln = a.get("module", "unknown")
             if not err:
                 continue
             key = f"{vuln}::{err}"
@@ -235,7 +235,7 @@ class Rulebook:
         # ── Rule 2: Always-successful techniques ──────────────────────────
         technique_stats: Dict[str, Dict[str, Any]] = {}
         for a in attempts:
-            vuln = a.get("vulnerability_type", "unknown")
+            vuln = a.get("module", "unknown")
             tech = a.get("technique", "")
             if not tech:
                 continue
@@ -282,7 +282,7 @@ class Rulebook:
         # ── Rule 3: Vuln types with zero success after many attempts ──────
         vuln_stats: Dict[str, Dict[str, int]] = {}
         for a in attempts:
-            vuln = a.get("vulnerability_type", "unknown")
+            vuln = a.get("module", "unknown")
             if vuln not in vuln_stats:
                 vuln_stats[vuln] = {"total": 0, "success": 0}
             vuln_stats[vuln]["total"] += 1

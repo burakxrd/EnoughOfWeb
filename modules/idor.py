@@ -162,7 +162,14 @@ class IDORExploit(BaseExploit):
                     test_url = urlunparse(parsed._replace(query=new_query))
                     resp = self._request("GET", test_url)
                 else:
-                    data = dict(base_data)
+                    data = {}
+                    for k, v in base_data.items():
+                        if isinstance(v, str):
+                            data[k] = v.strip()
+                        elif isinstance(v, (dict, list)):
+                            data[k] = str(v)
+                        else:
+                            data[k] = str(v) if v is not None else ""
                     data[param] = str(test_id)
                     resp = self._request("POST", url, data=data)
 
@@ -281,7 +288,14 @@ class IDORExploit(BaseExploit):
                         test_url = urlunparse(parsed._replace(query=new_query))
                         resp = self._request("GET", test_url)
                     else:
-                        data = dict(base_data)
+                        data = {}
+                        for k, v in base_data.items():
+                            if isinstance(v, str):
+                                data[k] = v.strip()
+                            elif isinstance(v, (dict, list)):
+                                data[k] = str(v)
+                            else:
+                                data[k] = str(v) if v is not None else ""
                         data[param] = str(test_id)
                         resp = self._request("POST", url, data=data)
 

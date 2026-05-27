@@ -76,12 +76,17 @@ def save_config(config: dict):
         json.dump(config, f, indent=2, ensure_ascii=False)
 
 
-def first_run_setup():
+def first_run_setup(non_interactive: bool = False):
     """Interactive first-run setup. Only asks essentials, rest is defaults."""
     if CONFIG_FILE.exists():
         return load_config()
 
     config = DEFAULTS.copy()
+    
+    if non_interactive:
+        save_config(config)
+        return config
+
     print("\n╔══════════════════════════════════════╗")
     print("║   EnoughOfWeb — First Run Setup      ║")
     print("╚══════════════════════════════════════╝\n")

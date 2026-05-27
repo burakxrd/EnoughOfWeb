@@ -533,6 +533,7 @@ Examples:
     # Shared args
     def add_common_args(p):
         p.add_argument("--json", "-j", action="store_true", help="Output as JSON (agent-friendly)")
+        p.add_argument("--non-interactive", action="store_true", help="Skip interactive prompts")
         p.add_argument("--i-have-permission", action="store_true", dest="permission",
                         help="Confirm authorization to test")
 
@@ -633,7 +634,8 @@ Examples:
     # First-run setup
     from config import CONFIG_FILE
     if not CONFIG_FILE.exists() and args.command in ("scan", "attack", "recon"):
-        first_run_setup()
+        is_non_interactive = getattr(args, "json", False) or getattr(args, "non_interactive", False)
+        first_run_setup(non_interactive=is_non_interactive)
 
     args.func(args)
 
