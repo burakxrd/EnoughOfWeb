@@ -1,0 +1,83 @@
+{
+  "session_id": "20260527_154445_ctf5_hackme_local_5005",
+  "target_url": "http://ctf5.hackme.local:5005",
+  "domain": "ctf5.hackme.local:5005",
+  "created_at": "2026-05-27T12:44:45.760744+00:00",
+  "updated_at": "2026-05-27T12:44:45.767794+00:00",
+  "recon_done": true,
+  "recon_data_snapshot": {
+    "tech": {
+      "server": "Apache/2.4.54",
+      "x_powered_by": "PHP/8.1",
+      "frameworks": []
+    },
+    "form_count": 2,
+    "param_count": 0,
+    "cookie_count": 1,
+    "paths_found": []
+  },
+  "recommended_order": [
+    "ssti",
+    "lfi",
+    "sqli",
+    "cmdi",
+    "xss",
+    "jwt",
+    "ssrf",
+    "idor",
+    "auth_bypass"
+  ],
+  "actual_order": [
+    "sqli",
+    "lfi",
+    "xss",
+    "ssti"
+  ],
+  "modules_run": {
+    "sqli": {
+      "module": "sqli",
+      "status": "completed",
+      "result": "no_findings",
+      "source": "agent_override",
+      "started_at": "2026-05-27T12:44:45.763161+00:00",
+      "completed_at": "2026-05-27T12:44:45.763166+00:00",
+      "findings_count": 0,
+      "flag": ""
+    },
+    "lfi": {
+      "module": "lfi",
+      "status": "completed",
+      "result": "no_findings",
+      "source": "agent_override",
+      "started_at": "2026-05-27T12:44:45.764566+00:00",
+      "completed_at": "2026-05-27T12:44:45.764571+00:00",
+      "findings_count": 0,
+      "flag": ""
+    },
+    "xss": {
+      "module": "xss",
+      "status": "completed",
+      "result": "no_findings",
+      "source": "agent_override",
+      "started_at": "2026-05-27T12:44:45.765918+00:00",
+      "completed_at": "2026-05-27T12:44:45.765923+00:00",
+      "findings_count": 0,
+      "flag": ""
+    },
+    "ssti": {
+      "module": "ssti",
+      "status": "completed",
+      "result": "flag_found",
+      "source": "autonomous",
+      "started_at": "2026-05-27T12:44:45.767298+00:00",
+      "completed_at": "2026-05-27T12:44:45.767303+00:00",
+      "findings_count": 0,
+      "flag": "FLAG{ctf5_feedback_ssti}"
+    }
+  },
+  "overrides_detected": 3,
+  "status": "completed",
+  "flags_found": [
+    "FLAG{ctf5_feedback_ssti}"
+  ]
+}

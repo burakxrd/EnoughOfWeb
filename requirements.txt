@@ -1,0 +1,7 @@
+requests>=2.31.0
+beautifulsoup4>=4.12
+lxml>=5.0
+PyJWT>=2.8
+urllib3>=2.1
+colorama>=0.4.6
+paramiko>=3.4

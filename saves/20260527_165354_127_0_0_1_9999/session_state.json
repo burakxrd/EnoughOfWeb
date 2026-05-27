@@ -1,0 +1,171 @@
+{
+  "session_id": "20260527_165354_127_0_0_1_9999",
+  "target_url": "http://127.0.0.1:9999",
+  "domain": "127.0.0.1:9999",
+  "created_at": "2026-05-27T13:53:54.557094+00:00",
+  "updated_at": "2026-05-27T13:54:18.045737+00:00",
+  "recon_done": true,
+  "recon_data_snapshot": {
+    "tech": {
+      "server": "Apache/2.4.41 Python/3.14.4, Apache/2.4.41",
+      "x_powered_by": "PHP/8.2",
+      "content_type": "text/html",
+      "frameworks": [
+        "PHP",
+        "Apache"
+      ],
+      "language": "PHP"
+    },
+    "form_count": 0,
+    "param_count": 0,
+    "cookie_count": 1,
+    "paths_found": [
+      "robots_txt",
+      "sitemap_xml",
+      "git_exposed",
+      "env_exposed",
+      "admin",
+      "admin_panel",
+      "login",
+      "login_alt",
+      "api",
+      "api_docs",
+      "swagger",
+      "backup",
+      "backup_zip",
+      "debug",
+      "console",
+      "phpmyadmin",
+      "wp_admin",
+      "wp_login",
+      "config_file",
+      "info_php",
+      "phpinfo",
+      "htaccess",
+      "ds_store",
+      "web_config",
+      "server_status",
+      "graphql",
+      "flag",
+      "flag_txt",
+      "secret"
+    ]
+  },
+  "recommended_order": [
+    "ssti",
+    "lfi",
+    "sqli",
+    "idor",
+    "cmdi",
+    "ssrf",
+    "jwt",
+    "xss",
+    "auth_bypass"
+  ],
+  "actual_order": [
+    "ssti",
+    "lfi",
+    "sqli",
+    "idor",
+    "cmdi",
+    "ssrf",
+    "jwt",
+    "xss",
+    "auth_bypass"
+  ],
+  "modules_run": {
+    "ssti": {
+      "module": "ssti",
+      "status": "completed",
+      "result": "no_findings",
+      "source": "autonomous",
+      "started_at": "2026-05-27T13:53:56.433835+00:00",
+      "completed_at": "2026-05-27T13:53:56.433842+00:00",
+      "findings_count": 0,
+      "flag": ""
+    },
+    "lfi": {
+      "module": "lfi",
+      "status": "completed",
+      "result": "no_findings",
+      "source": "autonomous",
+      "started_at": "2026-05-27T13:54:04.519652+00:00",
+      "completed_at": "2026-05-27T13:54:04.519661+00:00",
+      "findings_count": 0,
+      "flag": ""
+    },
+    "sqli": {
+      "module": "sqli",
+      "status": "completed",
+      "result": "no_findings",
+      "source": "autonomous",
+      "started_at": "2026-05-27T13:54:07.652623+00:00",
+      "completed_at": "2026-05-27T13:54:07.652630+00:00",
+      "findings_count": 0,
+      "flag": ""
+    },
+    "idor": {
+      "module": "idor",
+      "status": "completed",
+      "result": "no_findings",
+      "source": "autonomous",
+      "started_at": "2026-05-27T13:54:07.659413+00:00",
+      "completed_at": "2026-05-27T13:54:07.659419+00:00",
+      "findings_count": 0,
+      "flag": ""
+    },
+    "cmdi": {
+      "module": "cmdi",
+      "status": "completed",
+      "result": "no_findings",
+      "source": "autonomous",
+      "started_at": "2026-05-27T13:54:14.079189+00:00",
+      "completed_at": "2026-05-27T13:54:14.079201+00:00",
+      "findings_count": 0,
+      "flag": ""
+    },
+    "ssrf": {
+      "module": "ssrf",
+      "status": "completed",
+      "result": "no_findings",
+      "source": "autonomous",
+      "started_at": "2026-05-27T13:54:16.559081+00:00",
+      "completed_at": "2026-05-27T13:54:16.559088+00:00",
+      "findings_count": 0,
+      "flag": ""
+    },
+    "jwt": {
+      "module": "jwt",
+      "status": "completed",
+      "result": "no_findings",
+      "source": "autonomous",
+      "started_at": "2026-05-27T13:54:17.089741+00:00",
+      "completed_at": "2026-05-27T13:54:17.089749+00:00",
+      "findings_count": 0,
+      "flag": ""
+    },
+    "xss": {
+      "module": "xss",
+      "status": "completed",
+      "result": "no_findings",
+      "source": "autonomous",
+      "started_at": "2026-05-27T13:54:17.245116+00:00",
+      "completed_at": "2026-05-27T13:54:17.245123+00:00",
+      "findings_count": 0,
+      "flag": ""
+    },
+    "auth_bypass": {
+      "module": "auth_bypass",
+      "status": "completed",
+      "result": "findings",
+      "source": "autonomous",
+      "started_at": "2026-05-27T13:54:18.041276+00:00",
+      "completed_at": "2026-05-27T13:54:18.041285+00:00",
+      "findings_count": 1,
+      "flag": ""
+    }
+  },
+  "overrides_detected": 0,
+  "status": "completed",
+  "flags_found": []
+}

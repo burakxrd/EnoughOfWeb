@@ -1,0 +1,77 @@
+{
+  "session_id": "20260527_153622_vulnapp_ctf_8080",
+  "target_url": "http://vulnapp.ctf:8080",
+  "domain": "vulnapp.ctf:8080",
+  "created_at": "2026-05-27T12:36:22.492685+00:00",
+  "updated_at": "2026-05-27T12:36:22.498762+00:00",
+  "recon_done": true,
+  "recon_data_snapshot": {
+    "tech": {
+      "server": "Apache/2.4.41",
+      "x_powered_by": "PHP/8.2",
+      "frameworks": []
+    },
+    "form_count": 2,
+    "param_count": 0,
+    "cookie_count": 1,
+    "paths_found": [
+      "/robots.txt",
+      "/admin"
+    ]
+  },
+  "recommended_order": [
+    "sqli",
+    "lfi",
+    "auth_bypass",
+    "idor",
+    "ssti",
+    "cmdi",
+    "ssrf",
+    "xss",
+    "jwt"
+  ],
+  "actual_order": [
+    "sqli",
+    "lfi",
+    "ssti",
+    "sqli"
+  ],
+  "modules_run": {
+    "sqli": {
+      "module": "sqli",
+      "status": "completed",
+      "result": "flag_found",
+      "source": "agent_retry",
+      "started_at": "2026-05-27T12:36:22.498170+00:00",
+      "completed_at": "2026-05-27T12:36:22.498175+00:00",
+      "findings_count": 0,
+      "flag": "FLAG{sqli_auth_bypass}"
+    },
+    "lfi": {
+      "module": "lfi",
+      "status": "completed",
+      "result": "no_findings",
+      "source": "autonomous",
+      "started_at": "2026-05-27T12:36:22.495953+00:00",
+      "completed_at": "2026-05-27T12:36:22.495959+00:00",
+      "findings_count": 0,
+      "flag": ""
+    },
+    "ssti": {
+      "module": "ssti",
+      "status": "completed",
+      "result": "flag_found",
+      "source": "agent_override",
+      "started_at": "2026-05-27T12:36:22.497155+00:00",
+      "completed_at": "2026-05-27T12:36:22.497160+00:00",
+      "findings_count": 0,
+      "flag": "FLAG{ssti_jinja2_rce}"
+    }
+  },
+  "overrides_detected": 1,
+  "status": "completed",
+  "flags_found": [
+    "FLAG{ssti_jinja2_rce}",
+    "FLAG{sqli_auth_bypass}"
+  ]
+}

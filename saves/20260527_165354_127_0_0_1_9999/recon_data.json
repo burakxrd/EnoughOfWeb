@@ -1,0 +1,267 @@
+{
+  "target_url": "http://127.0.0.1:9999",
+  "base_url": "http://127.0.0.1:9999",
+  "forms": [],
+  "url_params": [
+    "q",
+    "id",
+    "file"
+  ],
+  "technology": {
+    "server": "Apache/2.4.41 Python/3.14.4, Apache/2.4.41",
+    "x_powered_by": "PHP/8.2",
+    "content_type": "text/html",
+    "frameworks": [
+      "PHP",
+      "Apache"
+    ],
+    "language": "PHP"
+  },
+  "links": [
+    {
+      "url": "http://127.0.0.1:9999/login",
+      "text": "Login",
+      "path": "/login"
+    },
+    {
+      "url": "http://127.0.0.1:9999/search?q=test",
+      "text": "Search",
+      "path": "/search"
+    },
+    {
+      "url": "http://127.0.0.1:9999/profile?id=1",
+      "text": "Profile",
+      "path": "/profile"
+    },
+    {
+      "url": "http://127.0.0.1:9999/view?file=about.txt",
+      "text": "View File",
+      "path": "/view"
+    },
+    {
+      "url": "http://127.0.0.1:9999/api/users",
+      "text": "API",
+      "path": "/api/users"
+    }
+  ],
+  "interesting_paths": {
+    "robots_txt": {
+      "exists": true,
+      "status": 200,
+      "url": "http://127.0.0.1:9999/robots.txt",
+      "content_snippet": "User-agent: *\nDisallow: /admin\nDisallow: /backup\n",
+      "size": 49
+    },
+    "sitemap_xml": {
+      "exists": false,
+      "status": 404,
+      "url": "http://127.0.0.1:9999/sitemap.xml",
+      "content_snippet": "",
+      "size": 22
+    },
+    "git_exposed": {
+      "exists": false,
+      "status": 404,
+      "url": "http://127.0.0.1:9999/.git/HEAD",
+      "content_snippet": "",
+      "size": 22
+    },
+    "env_exposed": {
+      "exists": true,
+      "status": 200,
+      "url": "http://127.0.0.1:9999/.env",
+      "content_snippet": "DB_HOST=localhost\nDB_USER=root\nDB_PASS=secret123\n",
+      "size": 49
+    },
+    "admin": {
+      "exists": false,
+      "status": 403,
+      "url": "http://127.0.0.1:9999/admin",
+      "content_snippet": "",
+      "size": 46
+    },
+    "admin_panel": {
+      "exists": false,
+      "status": 404,
+      "url": "http://127.0.0.1:9999/admin/",
+      "content_snippet": "",
+      "size": 22
+    },
+    "login": {
+      "exists": true,
+      "status": 200,
+      "url": "http://127.0.0.1:9999/login",
+      "content_snippet": "<!DOCTYPE html>\n<html><head><title>Login - VulnApp</title></head>\n<body>\n<h1>Login</h1>\n<form method=\"POST\" action=\"/login\">\n  <input type=\"text\" name=\"username\" placeholder=\"Username\">\n  <input type=",
+      "size": 312
+    },
+    "login_alt": {
+      "exists": false,
+      "status": 404,
+      "url": "http://127.0.0.1:9999/signin",
+      "content_snippet": "",
+      "size": 22
+    },
+    "api": {
+      "exists": false,
+      "status": 404,
+      "url": "http://127.0.0.1:9999/api",
+      "content_snippet": "",
+      "size": 22
+    },
+    "api_docs": {
+      "exists": false,
+      "status": 404,
+      "url": "http://127.0.0.1:9999/api/docs",
+      "content_snippet": "",
+      "size": 22
+    },
+    "swagger": {
+      "exists": false,
+      "status": 404,
+      "url": "http://127.0.0.1:9999/swagger.json",
+      "content_snippet": "",
+      "size": 22
+    },
+    "backup": {
+      "exists": false,
+      "status": 404,
+      "url": "http://127.0.0.1:9999/backup",
+      "content_snippet": "",
+      "size": 22
+    },
+    "backup_zip": {
+      "exists": false,
+      "status": 404,
+      "url": "http://127.0.0.1:9999/backup.zip",
+      "content_snippet": "",
+      "size": 22
+    },
+    "debug": {
+      "exists": false,
+      "status": 404,
+      "url": "http://127.0.0.1:9999/debug",
+      "content_snippet": "",
+      "size": 22
+    },
+    "console": {
+      "exists": false,
+      "status": 404,
+      "url": "http://127.0.0.1:9999/console",
+      "content_snippet": "",
+      "size": 22
+    },
+    "phpmyadmin": {
+      "exists": false,
+      "status": 404,
+      "url": "http://127.0.0.1:9999/phpmyadmin",
+      "content_snippet": "",
+      "size": 22
+    },
+    "wp_admin": {
+      "exists": false,
+      "status": 404,
+      "url": "http://127.0.0.1:9999/wp-admin",
+      "content_snippet": "",
+      "size": 22
+    },
+    "wp_login": {
+      "exists": false,
+      "status": 404,
+      "url": "http://127.0.0.1:9999/wp-login.php",
+      "content_snippet": "",
+      "size": 22
+    },
+    "config_file": {
+      "exists": false,
+      "status": 404,
+      "url": "http://127.0.0.1:9999/config.php",
+      "content_snippet": "",
+      "size": 22
+    },
+    "info_php": {
+      "exists": false,
+      "status": 404,
+      "url": "http://127.0.0.1:9999/info.php",
+      "content_snippet": "",
+      "size": 22
+    },
+    "phpinfo": {
+      "exists": false,
+      "status": 404,
+      "url": "http://127.0.0.1:9999/phpinfo.php",
+      "content_snippet": "",
+      "size": 22
+    },
+    "htaccess": {
+      "exists": false,
+      "status": 404,
+      "url": "http://127.0.0.1:9999/.htaccess",
+      "content_snippet": "",
+      "size": 22
+    },
+    "ds_store": {
+      "exists": false,
+      "status": 404,
+      "url": "http://127.0.0.1:9999/.DS_Store",
+      "content_snippet": "",
+      "size": 22
+    },
+    "web_config": {
+      "exists": false,
+      "status": 404,
+      "url": "http://127.0.0.1:9999/web.config",
+      "content_snippet": "",
+      "size": 22
+    },
+    "server_status": {
+      "exists": false,
+      "status": 404,
+      "url": "http://127.0.0.1:9999/server-status",
+      "content_snippet": "",
+      "size": 22
+    },
+    "graphql": {
+      "exists": false,
+      "status": 404,
+      "url": "http://127.0.0.1:9999/graphql",
+      "content_snippet": "",
+      "size": 22
+    },
+    "flag": {
+      "exists": false,
+      "status": 404,
+      "url": "http://127.0.0.1:9999/flag",
+      "content_snippet": "",
+      "size": 22
+    },
+    "flag_txt": {
+      "exists": false,
+      "status": 404,
+      "url": "http://127.0.0.1:9999/flag.txt",
+      "content_snippet": "",
+      "size": 22
+    },
+    "secret": {
+      "exists": false,
+      "status": 404,
+      "url": "http://127.0.0.1:9999/secret",
+      "content_snippet": "",
+      "size": 22
+    }
+  },
+  "cookies": {
+    "PHPSESSID": "abc123"
+  },
+  "response_headers": {
+    "Server": "Apache/2.4.41 Python/3.14.4, Apache/2.4.41",
+    "Date": "Wed, 27 May 2026 13:53:54 GMT",
+    "Content-Type": "text/html",
+    "X-Powered-By": "PHP/8.2",
+    "Set-Cookie": "PHPSESSID=abc123; Path=/"
+  },
+  "flags_found": [],
+  "page_title": "VulnApp - Test Target",
+  "comments": [
+    "TODO: remove debug flag"
+  ]
+}

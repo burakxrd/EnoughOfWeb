@@ -1,0 +1,70 @@
+{
+  "session_id": "20260527_164008_127_0_0_1_9999",
+  "target_url": "http://127.0.0.1:9999",
+  "domain": "127.0.0.1:9999",
+  "created_at": "2026-05-27T13:40:08.292786+00:00",
+  "updated_at": "2026-05-27T13:40:08.490871+00:00",
+  "recon_done": true,
+  "recon_data_snapshot": {
+    "tech": {
+      "server": "Apache/2.4.41 Python/3.14.4, Apache/2.4.41",
+      "x_powered_by": "PHP/8.2",
+      "content_type": "text/html",
+      "frameworks": [
+        "PHP",
+        "Apache"
+      ],
+      "language": "PHP"
+    },
+    "form_count": 0,
+    "param_count": 0,
+    "cookie_count": 1,
+    "paths_found": [
+      "robots_txt",
+      "sitemap_xml",
+      "git_exposed",
+      "env_exposed",
+      "admin",
+      "admin_panel",
+      "login",
+      "login_alt",
+      "api",
+      "api_docs",
+      "swagger",
+      "backup",
+      "backup_zip",
+      "debug",
+      "console",
+      "phpmyadmin",
+      "wp_admin",
+      "wp_login",
+      "config_file",
+      "info_php",
+      "phpinfo",
+      "htaccess",
+      "ds_store",
+      "web_config",
+      "server_status",
+      "graphql",
+      "flag",
+      "flag_txt",
+      "secret"
+    ]
+  },
+  "recommended_order": [
+    "ssti",
+    "lfi",
+    "sqli",
+    "idor",
+    "cmdi",
+    "ssrf",
+    "jwt",
+    "xss",
+    "auth_bypass"
+  ],
+  "actual_order": [],
+  "modules_run": {},
+  "overrides_detected": 0,
+  "status": "active",
+  "flags_found": []
+}

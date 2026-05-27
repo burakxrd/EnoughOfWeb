@@ -1,0 +1,163 @@
+{
+  "stats": {
+    "target": "http://127.0.0.1:9999",
+    "session_id": "20260527_165354_127_0_0_1_9999",
+    "duration_seconds": 23.49,
+    "modules_run": 9,
+    "total_findings": 1,
+    "flags_found": 1,
+    "flags": [
+      "FLAG{sqli_auth_bypass}"
+    ],
+    "overrides_detected": 0,
+    "bottlenecks": 0,
+    "requests_made": 2776,
+    "strategy_tier": "mixed (seed + learned)"
+  },
+  "module_results": [
+    {
+      "module": "ssti",
+      "skipped": false,
+      "skip_reason": "",
+      "findings_count": 0,
+      "exploit_count": 0,
+      "duration": 1.6174342632293701,
+      "flag": null,
+      "source": "autonomous",
+      "findings": [],
+      "exploits": []
+    },
+    {
+      "module": "lfi",
+      "skipped": false,
+      "skip_reason": "",
+      "findings_count": 0,
+      "exploit_count": 0,
+      "duration": 8.081868648529053,
+      "flag": null,
+      "source": "autonomous",
+      "findings": [],
+      "exploits": []
+    },
+    {
+      "module": "sqli",
+      "skipped": false,
+      "skip_reason": "",
+      "findings_count": 0,
+      "exploit_count": 0,
+      "duration": 3.129180908203125,
+      "flag": null,
+      "source": "autonomous",
+      "findings": [],
+      "exploits": []
+    },
+    {
+      "module": "idor",
+      "skipped": false,
+      "skip_reason": "",
+      "findings_count": 0,
+      "exploit_count": 1,
+      "duration": 3.504753112792969e-05,
+      "flag": null,
+      "source": "autonomous",
+      "findings": [],
+      "exploits": [
+        {
+          "success": false,
+          "technique": "",
+          "flag": null,
+          "error": "'dict' object has no attribute 'strip'"
+        }
+      ]
+    },
+    {
+      "module": "cmdi",
+      "skipped": false,
+      "skip_reason": "",
+      "findings_count": 0,
+      "exploit_count": 0,
+      "duration": 6.417479038238525,
+      "flag": null,
+      "source": "autonomous",
+      "findings": [],
+      "exploits": []
+    },
+    {
+      "module": "ssrf",
+      "skipped": false,
+      "skip_reason": "",
+      "findings_count": 0,
+      "exploit_count": 0,
+      "duration": 2.4766829013824463,
+      "flag": null,
+      "source": "autonomous",
+      "findings": [],
+      "exploits": []
+    },
+    {
+      "module": "jwt",
+      "skipped": false,
+      "skip_reason": "",
+      "findings_count": 0,
+      "exploit_count": 0,
+      "duration": 0.5262987613677979,
+      "flag": null,
+      "source": "autonomous",
+      "findings": [],
+      "exploits": []
+    },
+    {
+      "module": "xss",
+      "skipped": false,
+      "skip_reason": "",
+      "findings_count": 0,
+      "exploit_count": 0,
+      "duration": 0.15267300605773926,
+      "flag": null,
+      "source": "autonomous",
+      "findings": [],
+      "exploits": []
+    },
+    {
+      "module": "auth_bypass",
+      "skipped": false,
+      "skip_reason": "",
+      "findings_count": 1,
+      "exploit_count": 1,
+      "duration": 0.7924289703369141,
+      "flag": null,
+      "source": "autonomous",
+      "findings": [
+        {
+          "vuln_type": "default-credentials",
+          "parameter": "username",
+          "method": "POST",
+          "severity": "critical",
+          "target_url": "http://127.0.0.1:9999/login"
+        }
+      ],
+      "exploits": [
+        {
+          "success": true,
+          "technique": "default-credentials",
+          "flag": null,
+          "error": null
+        }
+      ]
+    }
+  ],
+  "flags": [
+    "FLAG{sqli_auth_bypass}"
+  ],
+  "recommended_order": [
+    "ssti",
+    "lfi",
+    "sqli",
+    "idor",
+    "cmdi",
+    "ssrf",
+    "jwt",
+    "xss",
+    "auth_bypass"
+  ]
+}

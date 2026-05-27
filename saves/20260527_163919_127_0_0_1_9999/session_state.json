@@ -1,0 +1,31 @@
+{
+  "session_id": "20260527_163919_127_0_0_1_9999",
+  "target_url": "http://127.0.0.1:9999",
+  "domain": "127.0.0.1:9999",
+  "created_at": "2026-05-27T13:39:19.875689+00:00",
+  "updated_at": "2026-05-27T13:39:21.891290+00:00",
+  "recon_done": true,
+  "recon_data_snapshot": {
+    "tech": {},
+    "form_count": 0,
+    "param_count": 0,
+    "cookie_count": 0,
+    "paths_found": []
+  },
+  "recommended_order": [
+    "ssti",
+    "sqli",
+    "cmdi",
+    "lfi",
+    "jwt",
+    "xss",
+    "ssrf",
+    "idor",
+    "auth_bypass"
+  ],
+  "actual_order": [],
+  "modules_run": {},
+  "overrides_detected": 0,
+  "status": "active",
+  "flags_found": []
+}

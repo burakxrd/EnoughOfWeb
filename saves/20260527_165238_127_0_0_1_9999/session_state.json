@@ -1,0 +1,30 @@
+{
+  "session_id": "20260527_165238_127_0_0_1_9999",
+  "target_url": "http://127.0.0.1:9999/view",
+  "domain": "127.0.0.1:9999",
+  "created_at": "2026-05-27T13:52:38.212305+00:00",
+  "updated_at": "2026-05-27T13:52:43.958143+00:00",
+  "recon_done": false,
+  "recon_data_snapshot": {},
+  "recommended_order": [],
+  "actual_order": [
+    "lfi"
+  ],
+  "modules_run": {
+    "lfi": {
+      "module": "lfi",
+      "status": "completed",
+      "result": "flag_found",
+      "source": "autonomous",
+      "started_at": "2026-05-27T13:52:43.958111+00:00",
+      "completed_at": "2026-05-27T13:52:43.958120+00:00",
+      "findings_count": 1,
+      "flag": "FLAG{lfi_path_traversal_win}"
+    }
+  },
+  "overrides_detected": 0,
+  "status": "active",
+  "flags_found": [
+    "FLAG{lfi_path_traversal_win}"
+  ]
+}

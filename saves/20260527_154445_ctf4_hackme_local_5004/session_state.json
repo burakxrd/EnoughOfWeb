@@ -1,0 +1,83 @@
+{
+  "session_id": "20260527_154445_ctf4_hackme_local_5004",
+  "target_url": "http://ctf4.hackme.local:5004",
+  "domain": "ctf4.hackme.local:5004",
+  "created_at": "2026-05-27T12:44:45.753414+00:00",
+  "updated_at": "2026-05-27T12:44:45.759798+00:00",
+  "recon_done": true,
+  "recon_data_snapshot": {
+    "tech": {
+      "server": "Apache/2.4.48",
+      "x_powered_by": "PHP/8.0",
+      "frameworks": []
+    },
+    "form_count": 1,
+    "param_count": 0,
+    "cookie_count": 2,
+    "paths_found": []
+  },
+  "recommended_order": [
+    "ssti",
+    "jwt",
+    "lfi",
+    "sqli",
+    "cmdi",
+    "xss",
+    "ssrf",
+    "idor",
+    "auth_bypass"
+  ],
+  "actual_order": [
+    "sqli",
+    "lfi",
+    "xss",
+    "ssti"
+  ],
+  "modules_run": {
+    "sqli": {
+      "module": "sqli",
+      "status": "completed",
+      "result": "no_findings",
+      "source": "agent_override",
+      "started_at": "2026-05-27T12:44:45.755495+00:00",
+      "completed_at": "2026-05-27T12:44:45.755501+00:00",
+      "findings_count": 0,
+      "flag": ""
+    },
+    "lfi": {
+      "module": "lfi",
+      "status": "completed",
+      "result": "no_findings",
+      "source": "agent_override",
+      "started_at": "2026-05-27T12:44:45.756727+00:00",
+      "completed_at": "2026-05-27T12:44:45.756732+00:00",
+      "findings_count": 0,
+      "flag": ""
+    },
+    "xss": {
+      "module": "xss",
+      "status": "completed",
+      "result": "no_findings",
+      "source": "agent_override",
+      "started_at": "2026-05-27T12:44:45.758045+00:00",
+      "completed_at": "2026-05-27T12:44:45.758052+00:00",
+      "findings_count": 0,
+      "flag": ""
+    },
+    "ssti": {
+      "module": "ssti",
+      "status": "completed",
+      "result": "flag_found",
+      "source": "autonomous",
+      "started_at": "2026-05-27T12:44:45.759316+00:00",
+      "completed_at": "2026-05-27T12:44:45.759321+00:00",
+      "findings_count": 0,
+      "flag": "FLAG{ctf4_preview_injection}"
+    }
+  },
+  "overrides_detected": 3,
+  "status": "completed",
+  "flags_found": [
+    "FLAG{ctf4_preview_injection}"
+  ]
+}

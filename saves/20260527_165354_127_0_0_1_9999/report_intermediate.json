@@ -1,0 +1,185 @@
+{
+  "start_time": "2026-05-27T13:53:54.558194+00:00",
+  "snapshot_time": "2026-05-27T13:54:18.042057+00:00",
+  "flags_so_far": [
+    "FLAG{sqli_auth_bypass}"
+  ],
+  "entries": [
+    {
+      "timestamp": "2026-05-27T13:53:54.558313+00:00",
+      "prefix": "INFO",
+      "message": "Target: http://127.0.0.1:9999"
+    },
+    {
+      "timestamp": "2026-05-27T13:53:54.558351+00:00",
+      "prefix": "INFO",
+      "message": "Session: 20260527_165354_127_0_0_1_9999"
+    },
+    {
+      "timestamp": "2026-05-27T13:53:54.558366+00:00",
+      "prefix": "RECON",
+      "message": "Starting reconnaissance..."
+    },
+    {
+      "timestamp": "2026-05-27T13:53:54.808742+00:00",
+      "prefix": "RECON",
+      "message": "Title: VulnApp - Test Target"
+    },
+    {
+      "timestamp": "2026-05-27T13:53:54.808788+00:00",
+      "prefix": "RECON",
+      "message": "Server: Apache/2.4.41 Python/3.14.4, Apache/2.4.41"
+    },
+    {
+      "timestamp": "2026-05-27T13:53:54.808801+00:00",
+      "prefix": "RECON",
+      "message": "Powered by: PHP/8.2"
+    },
+    {
+      "timestamp": "2026-05-27T13:53:54.808811+00:00",
+      "prefix": "RECON",
+      "message": "Frameworks: PHP, Apache"
+    },
+    {
+      "timestamp": "2026-05-27T13:53:54.808826+00:00",
+      "prefix": "RECON",
+      "message": "Language: PHP"
+    },
+    {
+      "timestamp": "2026-05-27T13:53:54.808838+00:00",
+      "prefix": "RECON",
+      "message": "URL params: q, id, file"
+    },
+    {
+      "timestamp": "2026-05-27T13:53:54.808848+00:00",
+      "prefix": "RECON",
+      "message": "Links: 5"
+    },
+    {
+      "timestamp": "2026-05-27T13:53:54.808857+00:00",
+      "prefix": "RECON",
+      "message": "Exposed paths: robots_txt, env_exposed, login"
+    },
+    {
+      "timestamp": "2026-05-27T13:53:54.808867+00:00",
+      "prefix": "RECON",
+      "message": "Cookies: PHPSESSID"
+    },
+    {
+      "timestamp": "2026-05-27T13:53:54.808875+00:00",
+      "prefix": "RECON",
+      "message": "HTML comments: 1"
+    },
+    {
+      "timestamp": "2026-05-27T13:53:54.813921+00:00",
+      "prefix": "RECON",
+      "message": "Module order: ssti -> lfi -> sqli -> idor -> cmdi -> ssrf -> jwt -> xss -> auth_bypass"
+    },
+    {
+      "timestamp": "2026-05-27T13:53:54.813957+00:00",
+      "prefix": "RECON",
+      "message": "Strategy: mixed (seed + learned)"
+    },
+    {
+      "timestamp": "2026-05-27T13:53:54.816337+00:00",
+      "prefix": "SCAN",
+      "message": "ssti | starting"
+    },
+    {
+      "timestamp": "2026-05-27T13:53:56.434733+00:00",
+      "prefix": "SCAN",
+      "message": "ssti | complete | no findings"
+    },
+    {
+      "timestamp": "2026-05-27T13:53:56.437724+00:00",
+      "prefix": "SCAN",
+      "message": "lfi | starting"
+    },
+    {
+      "timestamp": "2026-05-27T13:54:04.520652+00:00",
+      "prefix": "SCAN",
+      "message": "lfi | complete | no findings"
+    },
+    {
+      "timestamp": "2026-05-27T13:54:04.523377+00:00",
+      "prefix": "SCAN",
+      "message": "sqli | starting"
+    },
+    {
+      "timestamp": "2026-05-27T13:54:07.653401+00:00",
+      "prefix": "SCAN",
+      "message": "sqli | complete | no findings"
+    },
+    {
+      "timestamp": "2026-05-27T13:54:07.657857+00:00",
+      "prefix": "SCAN",
+      "message": "idor | starting"
+    },
+    {
+      "timestamp": "2026-05-27T13:54:07.660085+00:00",
+      "prefix": "SCAN",
+      "message": "idor | complete | no findings"
+    },
+    {
+      "timestamp": "2026-05-27T13:54:07.661660+00:00",
+      "prefix": "SCAN",
+      "message": "cmdi | starting"
+    },
+    {
+      "timestamp": "2026-05-27T13:54:14.080023+00:00",
+      "prefix": "SCAN",
+      "message": "cmdi | complete | no findings"
+    },
+    {
+      "timestamp": "2026-05-27T13:54:14.082345+00:00",
+      "prefix": "SCAN",
+      "message": "ssrf | starting"
+    },
+    {
+      "timestamp": "2026-05-27T13:54:16.559933+00:00",
+      "prefix": "SCAN",
+      "message": "ssrf | complete | no findings"
+    },
+    {
+      "timestamp": "2026-05-27T13:54:16.563386+00:00",
+      "prefix": "SCAN",
+      "message": "jwt | starting"
+    },
+    {
+      "timestamp": "2026-05-27T13:54:17.090574+00:00",
+      "prefix": "SCAN",
+      "message": "jwt | complete | no findings"
+    },
+    {
+      "timestamp": "2026-05-27T13:54:17.092393+00:00",
+      "prefix": "SCAN",
+      "message": "xss | starting"
+    },
+    {
+      "timestamp": "2026-05-27T13:54:17.245965+00:00",
+      "prefix": "SCAN",
+      "message": "xss | complete | no findings"
+    },
+    {
+      "timestamp": "2026-05-27T13:54:17.247098+00:00",
+      "prefix": "SCAN",
+      "message": "auth_bypass | starting"
+    },
+    {
+      "timestamp": "2026-05-27T13:54:18.039602+00:00",
+      "prefix": "VULN",
+      "message": "default-credentials | critical | http://127.0.0.1:9999/login | param=username"
+    },
+    {
+      "timestamp": "2026-05-27T13:54:18.041989+00:00",
+      "prefix": "FLAG",
+      "message": "FLAG{sqli_auth_bypass}"
+    },
+    {
+      "timestamp": "2026-05-27T13:54:18.042036+00:00",
+      "prefix": "SCAN",
+      "message": "auth_bypass | complete | findings=1 duration=0.8s"
+    }
+  ],
+  "status": "in_progress"
+}

